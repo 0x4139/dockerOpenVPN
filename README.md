@@ -3,7 +3,7 @@
 Quick instructions:
 
 ```bash
-CID=$(docker run -d --privileged -p 443:443/tcp 0x4139/openvpn)
+CID=$(docker run -d --privileged -p 443:443/tcp --net=host 0x4139/openvpn)
 docker run -t -i -p 8080:8080 --volumes-from $CID 0x4139/openvpn serveconfig
 ```
 

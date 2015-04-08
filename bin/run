@@ -1,6 +1,5 @@
 #!/bin/sh
 set -e
-
 [ -d /dev/net ] ||
     mkdir -p /dev/net
 [ -c /dev/net/tun ] ||
@@ -20,7 +19,7 @@ chmod 600 key.pem
 [ -f tcp443.conf ] || cat >tcp443.conf <<EOF
 server 192.168.255.0 255.255.255.0
 verb 3
-diplicate-cn
+duplicate-cn
 key key.pem
 ca cert.pem
 cert cert.pem
