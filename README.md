@@ -4,7 +4,7 @@ Quick instructions:
 
 ```bash
 CID=$(docker run -d --privileged -p 443:443/tcp 0x4139/openvpn)
-docker run -t -i -p 8080:8080 --volumes-from $CID 0x4139/openvpn serveconfig
+docker run -t -i -p 8080:8080 --volumes-from $CID --net=host 0x4139/openvpn serveconfig
 ```
 
 Now download the file located at the indicated URL. You will get a
