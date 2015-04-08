@@ -47,16 +47,8 @@ is rooted.
 The topology used is `net30`, because it works on the widest range of OS.
 `p2p`, for instance, does not work on Windows.
 
-The TCP server uses `192.168.255.0/25` and the UDP server uses
-`192.168.255.128/25`.
-
-The client profile specifies `redirect-gateway def1`, meaning that after
-establishing the VPN connection, all traffic will go through the VPN.
-This might cause problems if you use local DNS recursors which are not
-directly reachable, since you will try to reach them through the VPN
-and they might not answer to you. If that happens, use public DNS
-resolvers like those of Google (8.8.4.4 and 8.8.8.8) or OpenDNS
-(208.67.222.222 and 208.67.220.220).
+The TCP server uses `192.168.255.0/24` and the UDP server uses
+`192.168.255.128/24`.
 
 
 ## Security discussion
