@@ -18,9 +18,9 @@ chmod 600 key.pem
     openssl x509 -req -in csr.pem -out cert.pem -signkey key.pem -days 24855
 
 [ -f tcp443.conf ] || cat >tcp443.conf <<EOF
-server 192.168.255.0 255.255.255.128
+server 192.168.255.0 255.255.255.0
 verb 3
-duplicate-cn
+diplicate-cn
 key key.pem
 ca cert.pem
 cert cert.pem

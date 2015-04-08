@@ -3,7 +3,7 @@
 Quick instructions:
 
 ```bash
-CID=$(docker run -d --privileged -p 1194:1194/udp -p 443:443/tcp 0x4139/openvpn)
+CID=$(docker run -d --privileged -p 443:443/tcp 0x4139/openvpn)
 docker run -t -i -p 8080:8080 --volumes-from $CID 0x4139/openvpn serveconfig
 ```
 
@@ -32,7 +32,6 @@ When the `0x4139/openvpn` image is started, it generates:
 - Diffie-Hellman parameters,
 - a private key,
 - a self-certificate matching the private key,
-- two OpenVPN server configurations (for UDP and TCP),
 - an OpenVPN client profile.
 
 Then, it starts two OpenVPN server processes (one on 1194/udp, another
