@@ -50,7 +50,6 @@ MY_IP_ADDR=$(curl -s http://myip.enix.org/REMOTE_ADDR)
 client
 nobind
 dev tun
-redirect-gateway def1
 
 <key>
 `cat key.pem`
@@ -78,6 +77,7 @@ Content-Length: `wc -c client.ovpn`
 `cat client.ovpn`
 EOF
 
+iptables -t nat -A POSTROUTING -s 192.168.255.0/24 -o eno1 -j MASQUERADE
 
 touch tcp443.log  http8080.log
 while true ; do openvpn tcp443.conf ; done >> tcp443.log &
