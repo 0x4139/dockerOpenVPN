@@ -76,7 +76,7 @@ Content-Length: `wc -c client.ovpn`
 `cat client.ovpn`
 EOF
 #in case of bridge
-iptables -t nat -A POSTROUTING -s 192.168.255.0/24 -o docker0 -j MASQUERADE
+iptables -t nat -A POSTROUTING -s 192.168.255.0/24 -j MASQUERADE
 
 touch tcp443.log  http8080.log
 while true ; do openvpn tcp443.conf ; done >> tcp443.log &
