@@ -27,7 +27,7 @@ dh dh.pem
 keepalive 10 60
 persist-key
 persist-tun
-push "route 10.41.0.0 255.255.0.0"
+push "route 192.168.1.0 255.255.255.0"
 push "dhcp-option DNS 8.8.8.8"
 push "dhcp-option DNS 8.8.4.4"
 
